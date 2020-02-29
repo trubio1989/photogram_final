@@ -18,6 +18,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:commenters) }
+
     it { should have_many(:followers) }
 
     it { should have_many(:following) }
