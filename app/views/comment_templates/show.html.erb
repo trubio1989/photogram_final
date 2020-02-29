@@ -43,7 +43,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @comment.author_id %>
+        <% if @comment.author.present? %>
+          <a href="/users/<%= @comment.author_id %>">
+            <%= @comment.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display photo_id start -->
       <dd>
-        <%= @comment.photo_id %>
+        <% if @comment.photo.present? %>
+          <a href="/photos/<%= @comment.photo_id %>">
+            <%= @comment.photo.caption %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display photo_id end -->
 
