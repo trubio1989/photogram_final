@@ -50,7 +50,7 @@ class PhotosController < ApplicationController
     @photo.image = params.fetch("image")
     @photo.likes_count = params.fetch("likes_count")
     @photo.comments_count = params.fetch("comments_count")
-    @photo.owner_id = params.fetch("owner_id")
+    
 
     if @photo.valid?
       @photo.save
