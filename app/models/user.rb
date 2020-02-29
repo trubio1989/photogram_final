@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :uniqueness => true
+
   validates :username, :presence => { :message => "Username can't be blank..." }
 
   # Include default devise modules. Others available are:
