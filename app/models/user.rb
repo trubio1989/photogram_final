@@ -26,6 +26,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :feed,
+             :through => :following,
+             :source => :own_photos
+
   # Validations
 
   validates :username, :uniqueness => true
