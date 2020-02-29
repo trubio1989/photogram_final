@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link follow_request start -->
       <div class="col">
         <a href="/follow_requests/<%= @follow_request.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit follow request
         </a>
       </div>
-      <!-- Edit link follow_request end -->
 
-      <!-- Delete link follow_request start -->
       <div class="col">
         <a href="/delete_follow_request/<%= @follow_request.id %>" class="btn btn-block btn-outline-secondary">
           Delete follow request
         </a>
       </div>
-      <!-- Delete link follow_request end -->
     </div>
 
     <dl>
       <dt>
         Status
       </dt>
-      <!-- Display status start -->
       <dd>
         <%= @follow_request.status %>
       </dd>
-      <!-- Display status end -->
 
       <dt>
         Recipient
       </dt>
-      <!-- Display recipient_id start -->
       <dd>
         <% if @follow_request.recipient.present? %>
           <a href="/users/<%= @follow_request.recipient_id %>">
@@ -49,12 +42,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipient_id end -->
 
       <dt>
         Sender
       </dt>
-      <!-- Display sender_id start -->
       <dd>
         <% if @follow_request.sender.present? %>
           <a href="/users/<%= @follow_request.sender_id %>">
@@ -62,28 +53,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sender_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@follow_request.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@follow_request.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form comment start -->
 <form action="/create_comment" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for body start -->
   <div class="form-group">
     <label for="body">
       Body
     </label>
 
-    <!-- Input for body start -->
     <textarea id="body" name="body" class="form-control" rows="3"></textarea>
-    <!-- Input for body end -->
   </div>
-  <!-- Label and input for body end -->
 
-  <!-- Label and input for author_id start -->
   <div class="form-group">
     <label for="author_id">
       Author
     </label>
 
-    <!-- Input for author_id start -->
     <%= select_tag(:author_id, options_from_collection_for_select(User.all, :id, :email, @comment.author_id), :class => "form-control") %>
-    <!-- Input for author_id end -->
   </div>
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for photo_id start -->
   <div class="form-group">
     <label for="photo_id">
       Photo
     </label>
 
-    <!-- Input for photo_id start -->
     <%= select_tag(:photo_id, options_from_collection_for_select(Photo.all, :id, :caption, @comment.photo_id), :class => "form-control") %>
-    <!-- Input for photo_id end -->
   </div>
-  <!-- Label and input for photo_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment
